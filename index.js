@@ -12,12 +12,15 @@ https.get(url, function(response) {
         var github_response = JSON.parse(body);
         if(github_response.status === 'good'){
           console.log('Everything is okay, Github should be up!\n' +
+                      'Status code received : ' + github_response.status + '\n' +
                       'Last updated at : ' + github_response.last_updated);
         } else if(github_response.status === 'minor'){
           console.log('There are some minor issues with Github at the moment!\n' +
+                      'Status code received : ' + github_response.status + '\n' +
                       'Last updated at : ' + github_response.last_updated);
         }else{
           console.log('Github is facing some major issues right now!\n' +
+                      'Status code received : ' + github_response.status + '\n' +
                       'Last updated at : ' + github_response.last_updated);
         }
     });
